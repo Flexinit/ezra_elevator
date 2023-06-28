@@ -3,10 +3,10 @@ package com.ezra.elevatorapi.DbLogger;
 import com.maxmind.geoip2.DatabaseReader;
 import com.maxmind.geoip2.model.CityResponse;
 import com.maxmind.geoip2.record.City;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.net.InetAddress;
 
 @Service
@@ -14,10 +14,15 @@ public class ClientLocationService {
 
     private final DatabaseReader databaseReader;
 
-    public ClientLocationService() throws IOException {
+    public ClientLocationService() throws Exception {
         // Load the MaxMind GeoIP2 database
-        databaseReader = new DatabaseReader.Builder(getClass().getResourceAsStream("/GeoLite2-City.mmdb"))
-                .build();
+        File database = new File("GeoLite2-City.mmdb");
+         databaseReader = new DatabaseReader.Builder(database).build();
+
+        //URL databaseUrl = getClass().getResource("/GeoLite2-City.mmdb");
+        //System.out.println("Database URL: " + databaseUrl);
+        //File databaseFile = new File(databaseUrl.toURI());
+        //databaseReader = new DatabaseReader.Builder(databaseFile).build();
     }
 
     public String getClientLocation(HttpServletRequest request) {
@@ -36,7 +41,6 @@ public class ClientLocationService {
 
             return cityName + ", " + countryName;
         } catch (Exception e) {
-            // Handle any exceptions that occur during the location lookup
             e.printStackTrace();
             return "Unknown";
         }

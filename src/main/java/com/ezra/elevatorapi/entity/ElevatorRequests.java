@@ -1,11 +1,11 @@
 package com.ezra.elevatorapi.entity;
 
 import io.swagger.v3.oas.annotations.Hidden;
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -20,14 +20,14 @@ public class ElevatorRequests {
             allocationSize = 1
     )
     @GeneratedValue(
-            strategy = GenerationType.UUID,
+            strategy = GenerationType.IDENTITY,
             generator = "elevator_sequence"
     )
 
     @Hidden
-    private UUID id;
-    private UUID buildingId;
-    private UUID elevatorId;
+    private Long id;
+    private Long buildingId;
+    private Long elevatorId;
     private String requestedBy;
     private int currentFloorNumber;
     private int destinationFloorNumber;

@@ -1,17 +1,19 @@
 package com.ezra.elevatorapi.entity;
 
 import io.swagger.v3.oas.annotations.Hidden;
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Getter
 @Setter
 @Entity
+@ToString
 public class ElevatorLogs {
     @Id
     @SequenceGenerator(
@@ -20,14 +22,14 @@ public class ElevatorLogs {
             allocationSize = 1
     )
     @GeneratedValue(
-            strategy = GenerationType.UUID,
+            strategy = GenerationType.SEQUENCE,
             generator = "elevator_sequence"
     )
 
     @Hidden
-    private UUID id;
-    private UUID elevatorId;
-    private UUID buildingId;
+    private Long id;
+    private Long elevatorId;
+    private Long buildingId;
     private int currentFloorNumber;
     private int destinationFloorNumber;
     private String direction;

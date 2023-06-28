@@ -14,7 +14,11 @@ public class APIUtils {
     public static final String KAFKA_GROUP_ID = "groupId";
     public static Supplier<String> getLoggedInUser = () -> {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        return authentication.getName(); //return name of the logged in user
+        if(authentication != null){
+
+            return authentication.getName();
+        }
+        return "user"; //return name of the logged in user
     };
 
 }

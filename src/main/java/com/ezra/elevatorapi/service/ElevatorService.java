@@ -42,8 +42,7 @@ public class ElevatorService {
 
     @Autowired
     private KafkaProducerService kafkaProducerService;
-    @Autowired
-    private ElevatorLogs elevatorLogs;
+
     @Autowired
     private ElevatorRequestsRepository elevatorRequestsRepository;
 
@@ -75,6 +74,7 @@ public class ElevatorService {
     }
 
 
+    ElevatorLogs elevatorLogs = new ElevatorLogs();
     elevatorLogs.setElevatorId(elevatorRequestsEntity.getElevatorId());
     elevatorLogs.setDirection(elevatorDirection);
     elevatorLogs.setCurrentFloorNumber(elevatorRequestsEntity.getCurrentFloorNumber());
@@ -93,7 +93,6 @@ public class ElevatorService {
         // Handle the completion of the CompletableFuture
         future.whenComplete((result, exception) -> {
             if (exception != null) {
-                // Handle any exceptions that occurred during execution
                 exception.printStackTrace();
             } else {
                 // Execution completed successfully

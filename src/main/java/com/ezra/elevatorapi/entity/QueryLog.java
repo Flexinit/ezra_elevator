@@ -1,18 +1,17 @@
 package com.ezra.elevatorapi.entity;
 
 import io.swagger.v3.oas.annotations.Hidden;
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Getter
 @Setter
 @Entity
-public class DatabaseLogsSaver {
+public class QueryLog {
     @Id
     @SequenceGenerator(
             name = "elevator_sequence",
