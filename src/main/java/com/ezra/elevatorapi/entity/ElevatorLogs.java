@@ -27,6 +27,7 @@ public class ElevatorLogs {
     @Hidden
     private UUID id;
     private UUID elevatorId;
+    private UUID buildingId;
     private int currentFloorNumber;
     private int destinationFloorNumber;
     private String direction;

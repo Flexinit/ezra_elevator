@@ -19,7 +19,7 @@ public record ElevatorController(ElevatorService elevatorService) {
     }
 
     @PostMapping("/request")
-    public Optional<ResponseEntity<Elevator>> requestForElevator(@RequestBody ElevatorRequests elevatorRequestsEntity){
+    public Optional<ResponseEntity<ElevatorRequests>> requestForElevator(@RequestBody ElevatorRequests elevatorRequestsEntity){
         return elevatorService.requestForElevator(elevatorRequestsEntity);
     }
 
