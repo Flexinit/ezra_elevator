@@ -48,27 +48,7 @@ class ElevatorControllerTest {
     @Test
     @Disabled("TODO: Complete this test")
     void testAddNewElevator() {
-        //   Diffblue Cover was unable to write a Spring test,
-        //   so wrote a non-Spring test instead.
-        //   Reason: R008 Failed to instantiate class under test.
-        //   Diffblue Cover was unable to construct an instance of ElevatorController.
-        //   Ensure there is a package-visible constructor or factory method that does not
-        //   throw for the class under test.
-        //   If such a method is already present but Diffblue Cover does not find it, it can
-        //   be specified using custom rules for inputs:
-        //   https://docs.diffblue.com/knowledge-base/cli/custom-inputs/
-        //   This can happen because the factory method takes arguments, throws, returns null
-        //   or returns a subtype.
-        //   See https://diff.blue/R008 for further troubleshooting of this issue.
 
-        // TODO: Complete this test.
-        //   Reason: R013 No inputs found that don't throw a trivial exception.
-        //   Diffblue Cover tried to run the arrange/act section, but the method under
-        //   test threw
-        //   java.lang.NullPointerException: Cannot invoke "com.ezra.elevatorapi.repository.ElevatorRepository.save(Object)" because "this.elevatorRepository" is null
-        //       at com.ezra.elevatorapi.service.ElevatorService.addNewElevator(ElevatorService.java:50)
-        //       at com.ezra.elevatorapi.controller.ElevatorController.addNewElevator(ElevatorController.java:18)
-        //   See https://diff.blue/R013 to resolve this issue.
 
         ElevatorController elevatorController = new ElevatorController(new ElevatorService());
 
@@ -88,18 +68,7 @@ class ElevatorControllerTest {
      */
     @Test
     void testAddNewElevator2() {
-        //   Diffblue Cover was unable to write a Spring test,
-        //   so wrote a non-Spring test instead.
-        //   Reason: R008 Failed to instantiate class under test.
-        //   Diffblue Cover was unable to construct an instance of ElevatorController.
-        //   Ensure there is a package-visible constructor or factory method that does not
-        //   throw for the class under test.
-        //   If such a method is already present but Diffblue Cover does not find it, it can
-        //   be specified using custom rules for inputs:
-        //   https://docs.diffblue.com/knowledge-base/cli/custom-inputs/
-        //   This can happen because the factory method takes arguments, throws, returns null
-        //   or returns a subtype.
-        //   See https://diff.blue/R008 for further troubleshooting of this issue.
+
 
         Elevator elevator = new Elevator();
         elevator.setCapacity(10.0f);
@@ -163,27 +132,7 @@ class ElevatorControllerTest {
     @Test
     @Disabled("TODO: Complete this test")
     void testRequestForElevator() {
-        //   Diffblue Cover was unable to write a Spring test,
-        //   so wrote a non-Spring test instead.
-        //   Reason: R008 Failed to instantiate class under test.
-        //   Diffblue Cover was unable to construct an instance of ElevatorController.
-        //   Ensure there is a package-visible constructor or factory method that does not
-        //   throw for the class under test.
-        //   If such a method is already present but Diffblue Cover does not find it, it can
-        //   be specified using custom rules for inputs:
-        //   https://docs.diffblue.com/knowledge-base/cli/custom-inputs/
-        //   This can happen because the factory method takes arguments, throws, returns null
-        //   or returns a subtype.
-        //   See https://diff.blue/R008 for further troubleshooting of this issue.
 
-        // TODO: Complete this test.
-        //   Reason: R013 No inputs found that don't throw a trivial exception.
-        //   Diffblue Cover tried to run the arrange/act section, but the method under
-        //   test threw
-        //   java.lang.NullPointerException: Cannot invoke "com.ezra.elevatorapi.repository.ElevatorRequestsRepository.save(Object)" because "this.elevatorRequestsRepository" is null
-        //       at com.ezra.elevatorapi.service.ElevatorService.requestForElevator(ElevatorService.java:65)
-        //       at com.ezra.elevatorapi.controller.ElevatorController.requestForElevator(ElevatorController.java:23)
-        //   See https://diff.blue/R013 to resolve this issue.
 
         ElevatorController elevatorController = new ElevatorController(new ElevatorService());
 
@@ -204,27 +153,7 @@ class ElevatorControllerTest {
     @Test
     @Disabled("TODO: Complete this test")
     void testRequestForElevator2() {
-        //   Diffblue Cover was unable to write a Spring test,
-        //   so wrote a non-Spring test instead.
-        //   Reason: R008 Failed to instantiate class under test.
-        //   Diffblue Cover was unable to construct an instance of ElevatorController.
-        //   Ensure there is a package-visible constructor or factory method that does not
-        //   throw for the class under test.
-        //   If such a method is already present but Diffblue Cover does not find it, it can
-        //   be specified using custom rules for inputs:
-        //   https://docs.diffblue.com/knowledge-base/cli/custom-inputs/
-        //   This can happen because the factory method takes arguments, throws, returns null
-        //   or returns a subtype.
-        //   See https://diff.blue/R008 for further troubleshooting of this issue.
 
-        // TODO: Complete this test.
-        //   Reason: R013 No inputs found that don't throw a trivial exception.
-        //   Diffblue Cover tried to run the arrange/act section, but the method under
-        //   test threw
-        //   java.lang.NullPointerException: Cannot invoke "com.ezra.elevatorapi.repository.ElevatorRequestsRepository.save(Object)" because "this.elevatorRequestsRepository" is null
-        //       at com.ezra.elevatorapi.service.ElevatorService.requestForElevator(ElevatorService.java:65)
-        //       at com.ezra.elevatorapi.controller.ElevatorController.requestForElevator(ElevatorController.java:23)
-        //   See https://diff.blue/R013 to resolve this issue.
 
         ElevatorService elevatorService = new ElevatorService();
         elevatorService.initiateElevator = (Consumer<ElevatorLogs>) mock(Consumer.class);
@@ -246,18 +175,7 @@ class ElevatorControllerTest {
      */
     @Test
     void testRequestForElevator3() {
-        //   Diffblue Cover was unable to write a Spring test,
-        //   so wrote a non-Spring test instead.
-        //   Reason: R008 Failed to instantiate class under test.
-        //   Diffblue Cover was unable to construct an instance of ElevatorController.
-        //   Ensure there is a package-visible constructor or factory method that does not
-        //   throw for the class under test.
-        //   If such a method is already present but Diffblue Cover does not find it, it can
-        //   be specified using custom rules for inputs:
-        //   https://docs.diffblue.com/knowledge-base/cli/custom-inputs/
-        //   This can happen because the factory method takes arguments, throws, returns null
-        //   or returns a subtype.
-        //   See https://diff.blue/R008 for further troubleshooting of this issue.
+
 
         ElevatorService elevatorService = mock(ElevatorService.class);
         Optional<ResponseEntity<ElevatorRequests>> ofResult = Optional.of(new ResponseEntity<>(HttpStatus.CONTINUE));
