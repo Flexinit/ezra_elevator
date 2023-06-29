@@ -6,7 +6,7 @@ ELEVATOR API
 
 TECHNOLOGY USED
 ------------------
-The Elevator API is implemented with world class frameworks and libraries to enhance its performance.
+The Elevator API is implemented with world-class frameworks and libraries to enhance its performance.
 
 1. Apache Kafka
 -This tool came in very handy to take care of the realtime data publishing and consuming by simply subscribing 
@@ -30,7 +30,9 @@ Lombok is also very important in logging.
 4. Postgresql
 -This was the  DBMS chosen due to its scalability and ease of use
 
-5. Java 8 and above features
+5. Docker
+
+6. Java 8 and above features
 - CompletableFuture API - this was necesary to perform parallel operations on different threads and receive a 
 response once a thread is done. That is, multithreading.
 -Use of Record instead of a class was handy especially to reduce boilerplate code through creating constructors
