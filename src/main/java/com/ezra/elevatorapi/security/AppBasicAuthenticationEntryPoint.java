@@ -1,6 +1,8 @@
 package com.ezra.elevatorapi.security;
 
-import com.ezra.elevatorapi.DbLogger.ClientLocationService;
+import com.ezra.elevatorapi.DbLogger.IPGeolocationService;
+import com.ezra.elevatorapi.utils.APIUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
@@ -14,6 +16,9 @@ import java.io.PrintWriter;
 public class AppBasicAuthenticationEntryPoint
     extends BasicAuthenticationEntryPoint {
 
+  @Autowired
+  private  IPGeolocationService ipGeolocationService;
+
 
 
   @Override
@@ -21,14 +26,7 @@ public class AppBasicAuthenticationEntryPoint
                        HttpServletResponse response,
                        AuthenticationException authEx) throws IOException {
 
-    ClientLocationService clientLocationService = null;
-    try {
-      clientLocationService = new ClientLocationService();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-
-    //APIUtils.USER_LOCATION= clientLocationService.getClientLocation(request);
+    APIUtils.USER_LOCATION = ipGeolocationService.getUserLocation(request.getRemoteAddr());
 
     response.addHeader("WWW-Authenticate", "Basic realm=" + getRealmName() + "");
     response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);

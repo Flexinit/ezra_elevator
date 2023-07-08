@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 @Slf4j
 public class APIUtils {
 
-    public static String USER_LOCATION = "";
+    public static  String USER_LOCATION = "";
     public static final String KAFKA_TOPIC = "ezra_world";
     public static final String KAFKA_GROUP_ID = "groupId";
     public static Supplier<String> getLoggedInUser = () -> {
