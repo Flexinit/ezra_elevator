@@ -13,7 +13,6 @@ public class KafkaProducerService {
     private  KafkaTemplate<String, String> kafkaTemplateString;
 
 
-
     public void publishElevatorMessage(String topic, String elevatorLogs) {
         kafkaTemplateString.send(topic, elevatorLogs);
     }

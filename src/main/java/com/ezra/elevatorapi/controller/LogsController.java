@@ -18,6 +18,7 @@ public record LogsController(QueryLogsService queryLogsService, ElevatorService 
 
     @GetMapping
     public Optional<List<QueryLog>> getDatabaseQueryLogs(){
+
         return queryLogsService.getDatabaseQueryLogs();
     }
 

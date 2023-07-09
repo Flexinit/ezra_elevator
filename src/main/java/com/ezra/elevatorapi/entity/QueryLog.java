@@ -25,6 +25,8 @@ public class QueryLog {
 
     @Hidden
     private Long id;
+
+    @Column(columnDefinition = "text")
     private String queryText;
     private String callerName;
     private String callerLocation;
